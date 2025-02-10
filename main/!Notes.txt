@@ -1,15 +1,22 @@
-NOTES
+__NOTES__
 
 - The Board class MUST be a complete blackbox, only printing results, never giving my Solver any extra information
 - I need to dedicate an hour to properly set up my Github
 
 
+__SCOPE IDEAS__
 
-SCOPE IDEAS
-
+Easy:
 - Smart Start so you don't start on a mine or a number (at least a 3x3 of safe spaces)
+- Adding in the chording action (middle click)
+- Bigger explosion
+
+Medium:
 - Giving this an actual GUI would be cool
+- This really should have some sort of write up once I'm done
+- Option of borderless
+
+Hard:
+- Infinite minesweeper???
+- Could be interesting to explore different tilings besides square (triangular, hexagonal, that weird einstein tile)
 - I kinda imagine that this wouldn't be too different in higher dimesions, but tbh that kinda sounds hellish to code, especially if it had a GUI
-- Also could be interesting to explore different tiling systems
-- I could maybe add in chording???
-- This really should have some sort of write up attached to it

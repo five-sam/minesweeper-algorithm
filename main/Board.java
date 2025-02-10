@@ -4,26 +4,32 @@ import java.util.Random;
 // MUST BE A COMPLETE BLACKBOX TO ALGORITHM, OTHERWISE SACRIFICES CONFIDENTIALITY
 // this means all void return types, only information comes through prints, and only thing that can go in is a flag or explore action
 
-// This class creates the board that minesweeper is played upon
+// This class creates the board that minesweeper is played upon.
 // Only input are the constructors and action(), only output is toString()
+
 public class Board {
     // Theoretically this group of variables could be given without sacrificing confidentiality, but I'm already committed to the blackbox idea
-    private int[] dimensions;
-    private int numMines;
+    private int[] dimensions = new int[2];
+    private int numFlags;
+    private int turn;
     private boolean isGameOver;
+
+    private Tile[][] gameBoard;
 
     private Random rand; // this could be a local variable but I think if I end up adding smart start I need this as an instance variable
 
-    // initializes then calls boardBuilder, have 2 constructors depending on whether or not a seed is used
+    // initializes then calls boardBuilder(), it has 2 constructors depending on whether or not a seed is used
     public Board(int[] dimensions, int numMines) {
         this.dimensions = dimensions;
-        this.numMines = numMines;
+        this.numFlags = numMines;
+        this.turn = 0;
         this.isGameOver = false;
         this.rand = new Random();
         boardBuilder();
     } public Board(int[] dimensions, int numMines, long seed) {
         this.dimensions = dimensions;
-        this.numMines = numMines;
+        this.numFlags = numMines;
+        this.turn = 0;
         this.isGameOver = false;
         this.rand = new Random(seed);
         boardBuilder();
@@ -51,25 +57,20 @@ public class Board {
 
     // This is the only output the Board gives
     public String toString() {
-        return "";
-    }
+        String finalString = "";
 
-    // The more I code the more I realize I cannot reasonably make this a nested class.
-    /*
-    private class Tile {
-        private int[] coordinate;
-        private int value;
-        private boolean isExplored;
-        private boolean isMine;
-        private boolean isFlag;
+        finalString += "   ⚑: " + numFlags + "    ⊕: " + turn;
 
-        // kinda ugly code but this feels a lot more sensible than something overengineered
-        private Tile(int[] coordinate, int value, boolean isExplored, boolean isMine, boolean isFlag) {
-
+        for (int i = 0; i < dimensions[0]; i++) { // row
+            for (int j = 0; j < dimensions[1]; j++) {
+                finalString += " " + gameBoard[i][j];
+            }
+            finalString += "\n";
         }
-
-        public toString
+        if (isGameOver) {
+            finalString += "\n   ! Game Over !   \n";
+        }
+        return finalString;
     }
-    */
 
 }
