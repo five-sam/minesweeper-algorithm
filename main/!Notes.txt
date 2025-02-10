@@ -1,0 +1,15 @@
+NOTES
+
+- The Board class MUST be a complete blackbox, only printing results, never giving my Solver any extra information
+- I need to dedicate an hour to properly set up my Github
+
+
+
+SCOPE IDEAS
+
+- Smart Start so you don't start on a mine or a number (at least a 3x3 of safe spaces)
+- Giving this an actual GUI would be cool
+- I kinda imagine that this wouldn't be too different in higher dimesions, but tbh that kinda sounds hellish to code, especially if it had a GUI
+- Also could be interesting to explore different tiling systems
+- I could maybe add in chording???
+- This really should have some sort of write up attached to it
