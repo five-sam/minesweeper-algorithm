@@ -35,10 +35,6 @@ public class Board {
         boardBuilder();
     }
 
-    private void boardBuilder() {
-        
-    }
-
 
 
     // This is the only input the Board takes
@@ -62,7 +58,7 @@ public class Board {
         finalString += "   ⚑: " + numFlags + "    ⊕: " + turn;
 
         for (int i = 0; i < dimensions[0]; i++) { // row
-            for (int j = 0; j < dimensions[1]; j++) {
+            for (int j = 0; j < dimensions[1]; j++) { // column
                 finalString += " " + gameBoard[i][j];
             }
             finalString += "\n";
